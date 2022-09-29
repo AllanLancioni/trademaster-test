@@ -1,13 +1,10 @@
-import { ModelLike } from './../types/ModelLike';
-
-export enum ProductType { MOVIE = 'MOVIE', BOOK = 'BOOK', DVD = 'DVD' }
-
-export interface Product extends ModelLike {
+export type ProductType = 'MOVIE' | 'BOOK' | 'DVD'
+export interface Product {
 
   title: string
   type: ProductType
   category: string
-  img: string
+  img: string | null
   priceSell: number
   priceRentPerDay: number
   isAvailableForSell: boolean

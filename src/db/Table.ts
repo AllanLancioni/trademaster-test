@@ -8,19 +8,20 @@ export class Table<T> {
 
   constructor(public name: string) { }
 
-  private validate(item: Partial<T> & ModelLike): boolean {
+  protected validate(item: any): boolean {
     return true
   }
 
-  find(queryFn: QueryFn<T & ModelLike>): Array<T & ModelLike> {
-    return this.data.filter(queryFn)
+  find(queryFn?: QueryFn<T & ModelLike>): Array<T & ModelLike> {
+    return queryFn ? this.data.filter(queryFn) : this.data
   }
 
-  findOne(queryFn: QueryFn<T & ModelLike>): T & ModelLike | null {
-    return this.data.find(queryFn) || null
+  findOne(queryFn?: QueryFn<T & ModelLike>): T & ModelLike | null {
+    return (queryFn ? this.data.find(queryFn) : this.data[0]) || null
   }
 
   insert(item: T & ModelLike) {
+
     this.validate(item)
     item.id = ++this.lastId
     item.createdAt = item.updatedAt = new Date()
