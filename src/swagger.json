@@ -1,0 +1,402 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Test Trademaster Node.js",
+        "description": "Api REST para simulação de loja",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Server"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "paths": {
+        "/product": {
+            "post": {
+                "summary": "Create Product ",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Product"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": "string",
+                                    "type": "string",
+                                    "category": "string",
+                                    "img": "string",
+                                    "priceSell": "integer",
+                                    "priceRentPerDay": "integer",
+                                    "isAvailableForSell": "boolean",
+                                    "isAvailableForRent": "boolean",
+                                    "qtyStock": "integer",
+                                    "qtyRented": "integer"
+                                }
+                            },
+                            "example": {
+                                "title": "titulo do livro 1",
+                                "type": "BOOK",
+                                "category": "COMEDY",
+                                "img": "asdfasf",
+                                "priceSell": 10,
+                                "priceRentPerDay": 10,
+                                "isAvailableForSell": true,
+                                "isAvailableForRent": true,
+                                "qtyStock": 10,
+                                "qtyRented": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get Products",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Product"
+                ],
+                "parameters": []
+            }
+        },
+        "/product/1": {
+            "put": {
+                "summary": "Update Product ",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Product"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": "string",
+                                    "type": "string",
+                                    "category": "string",
+                                    "img": "string",
+                                    "priceSell": "integer",
+                                    "priceRentPerDay": "integer",
+                                    "isAvailableForSell": "boolean",
+                                    "isAvailableForRent": "boolean",
+                                    "qtyStock": "integer",
+                                    "qtyRented": "integer"
+                                }
+                            },
+                            "example": {
+                                "title": "titulo do livro 1 - editado",
+                                "type": "BOOK",
+                                "category": "COMEDY",
+                                "img": "asdfasf",
+                                "priceSell": 10,
+                                "priceRentPerDay": 10,
+                                "isAvailableForSell": true,
+                                "isAvailableForRent": true,
+                                "qtyStock": 10,
+                                "qtyRented": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get Product By Id",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Product"
+                ],
+                "parameters": []
+            },
+            "delete": {
+                "summary": "Delete Product",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Product"
+                ],
+                "parameters": []
+            }
+        },
+        "/client": {
+            "post": {
+                "summary": "Create Client",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Client"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": "string",
+                                    "document": "string",
+                                    "address": "string",
+                                    "email": "string",
+                                    "phone": "string"
+                                }
+                            },
+                            "example": {
+                                "name": "Allan Lancioni 2",
+                                "document": "000.000.000-00",
+                                "address": "Rua João Machado Alves, 200",
+                                "email": "allanlancioni@example.com",
+                                "phone": "11 99999-9999"
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get Clients",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Client"
+                ],
+                "parameters": []
+            }
+        },
+        "/client/3": {
+            "put": {
+                "summary": "Update Client",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Client"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": "string",
+                                    "document": "string",
+                                    "address": "string",
+                                    "email": "string",
+                                    "phone": "string"
+                                }
+                            },
+                            "example": {
+                                "name": "Allan Lancioni",
+                                "document": "000.000.000-00",
+                                "address": "Rua João Machado Alves, 200",
+                                "email": "allanlancioni@example.com",
+                                "phone": "11 99999-9999"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/client/1": {
+            "get": {
+                "summary": "Get Client By Id",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Client"
+                ],
+                "parameters": []
+            },
+            "delete": {
+                "summary": "Delete Client",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Client"
+                ],
+                "parameters": []
+            }
+        },
+        "/transaction": {
+            "post": {
+                "summary": "Create Transaction",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Transaction"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "client": "integer",
+                                    "product": "integer",
+                                    "date": "string",
+                                    "type": "string",
+                                    "devolutionDate": "string"
+                                }
+                            },
+                            "example": {
+                                "client": 1,
+                                "product": 1,
+                                "date": "2022-06-29",
+                                "type": "RENT",
+                                "devolutionDate": "2022-06-30"
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get Transaction",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Transaction"
+                ],
+                "parameters": []
+            }
+        },
+        "/transaction/1": {
+            "get": {
+                "summary": "Get Transaction By Id",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Transaction"
+                ],
+                "parameters": []
+            }
+        }
+    }
+}

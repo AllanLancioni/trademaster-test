@@ -1,6 +1,6 @@
 import { Product } from './../models/Product.model';
 import { ModelLike } from '../types/ModelLike';
-import { Transaction } from '../models/Transaction.model';
+import { Transaction, TransactionPopulated } from '../models/Transaction.model';
 import { Request, Response } from "express";
 import db from '../db/Database'
 import { Table } from "../db/Table";
@@ -38,8 +38,14 @@ class TransactionController {
 
   getById(req: Request, res: Response) {
     const data = transactionTable.findOne(({ id }) => id === +req.params.id)
-    if (data)
-      return res.json(data)
+    if (data) {
+      const populatedData: TransactionPopulated = {
+        ...data,
+        product: productsTable.findOne(x => x.id === data.product),
+        client: clientsTable.findOne(x => x.id === data.client)
+      }
+      return res.json(populatedData)
+    }
     return res.status(422).json({ message: 'Entity not found!' })
   }
 

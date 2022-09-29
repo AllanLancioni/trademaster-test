@@ -11,6 +11,6 @@ export interface Transaction {
 }
 
 export interface TransactionPopulated extends Omit<Transaction, 'client' | 'product'> {
-  client: Client
-  product: Product
+  client: Client | null
+  product: Product | null
 }

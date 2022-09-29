@@ -4,7 +4,7 @@ import chalk from 'chalk'
 
 const data: Product[] = [
   {
-    title: 'Movie 2',
+    title: 'Movie 1',
     type: 'MOVIE',
     category: 'COMEDY',
     img: null,
@@ -12,12 +12,12 @@ const data: Product[] = [
     priceRentPerDay: 10,
     isAvailableForSell: true,
     isAvailableForRent: true,
-    qtyStock: 10,
+    qtyStock: 3,
     qtyRented: 0
   },
 
   {
-    title: 'Movie 1',
+    title: 'Movie 2',
     type: 'MOVIE',
     category: 'COMEDY',
     img: null,
