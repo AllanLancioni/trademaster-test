@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import chalk from 'chalk'
 import ProductController from './controllers/ProductController'
 import ClientController from './controllers/ClientController'
+import TransactionController from './controllers/TransactionController'
 
 dotenv.config()
 
@@ -29,6 +30,14 @@ app.use('/client', (
     .post('/', ClientController.create)
     .put('/:id', ClientController.update)
     .delete('/:id', ClientController.delete)
+  )
+)
+
+app.use('/transaction', (
+  Router()
+    .get('/', TransactionController.get)
+    .get('/:id', TransactionController.getById)
+    .post('/', TransactionController.registerTransaction)
   )
 )
 

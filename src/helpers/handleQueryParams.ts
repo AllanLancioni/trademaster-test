@@ -8,8 +8,6 @@ export default function handleQueryParams(params: any, fieldsToRegExp: string[] 
       newParams[field] = new RegExp(`.*${params[field]}.*`, 'i')
   }
 
-  console.log({newParams, params})
-
   return newParams
 
 } 

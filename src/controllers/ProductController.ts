@@ -35,8 +35,8 @@ class ProductController {
     try {
       const response = productTable.insert(req.body)
       return res.json(response)
-    } catch (error: any) {
-      return res.status(400).json(error)
+    } catch ({ name, message, errors }) {
+      return res.status(400).json({ name, message, errors })
     }
   }
 
@@ -44,8 +44,8 @@ class ProductController {
     try {
       const response = productTable.update(({ id }) => id === +req.params.id, req.body)
       return res.json(response)
-    } catch (error: any) {
-      return res.status(400).json(error)
+    } catch ({ name, message, errors }) {
+      return res.status(400).json({ name, message, errors })
     }
   }
 
@@ -53,8 +53,8 @@ class ProductController {
     try {
       const response = productTable.delete(({ id }) => id === +req.params.id)
       return res.json(response)
-    } catch (error: any) {
-      return res.status(400).json(error)
+    } catch ({ name, message, errors }) {
+      return res.status(400).json({ name, message, errors })
     }
   }
 

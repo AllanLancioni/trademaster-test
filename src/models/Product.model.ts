@@ -10,7 +10,7 @@ export interface Product {
   isAvailableForSell: boolean
   isAvailableForRent: boolean
 
-  qtdStock: number
-  qtdRented: number
+  qtyStock: number
+  qtyRented: number
 
 }

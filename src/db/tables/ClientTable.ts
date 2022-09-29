@@ -1,22 +1,25 @@
 import { ValidationSchemaError } from '../../errors/ValidationSchemaError';
 import { Client } from '../../models/Client.model'
 import { Table } from '../Table'
-import Ajv, { JSONSchemaType} from 'ajv'
-const ajv = new Ajv()
+import Ajv from 'ajv'
+const ajv = new Ajv({ allowUnionTypes: true })
 
 class ClientTable extends Table<Client> {
 
-  private schema: JSONSchemaType<Client> = {
+  private schema = {
     type: 'object',
     properties: {
       name: { type: 'string' },
       document: { type: 'string' },
       address: { type: 'string' },
       email: { type: 'string' },
-      phone: { type: 'string' }
+      phone: { type: 'string' },
+      id: { type: 'integer', nullable: true },
+      createdAt: { type: ['string', 'object'], nullable: true },
+      updatedAt: { type: ['string', 'object'], nullable: true },
     },
     required: ['name', 'document', 'address', 'email', 'phone'],
-    additionalProperties: true,
+    additionalProperties: false,
   }
   private validateSchema = ajv.compile(this.schema)
 

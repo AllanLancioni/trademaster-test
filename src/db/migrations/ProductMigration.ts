@@ -12,8 +12,8 @@ const data: Product[] = [
     priceRentPerDay: 10,
     isAvailableForSell: true,
     isAvailableForRent: true,
-    qtdStock: 10,
-    qtdRented: 0
+    qtyStock: 10,
+    qtyRented: 0
   },
 
   {
@@ -25,8 +25,8 @@ const data: Product[] = [
     priceRentPerDay: 10,
     isAvailableForSell: true,
     isAvailableForRent: true,
-    qtdStock: 10,
-    qtdRented: 0
+    qtyStock: 10,
+    qtyRented: 0
   }
 
 ]

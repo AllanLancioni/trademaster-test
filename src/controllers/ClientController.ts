@@ -13,8 +13,6 @@ class ClientController {
 
     const query = handleQueryParams(req.query, ['name', 'address'])
 
-    console.log({query})
-
     const data = clientTable.find((item: any) => Object
       .entries(query)
       .every(([k, v]) => typeof v === 'string' ? (item[k] || '').toString().toLowerCase() === v.toLowerCase() : v.test(item[k]))
