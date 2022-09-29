@@ -41,4 +41,3 @@ Para rodar os tests, utilizar o comando `npm test`
 Ao rodar o projeto, as migrations já são executadas.
 
 *Por padrão o projeto é executado na porta 3000, caso haja necessidade de alteração, configurar no arquivo **.env**. O projeto vem com um arquivo **.env.example** com os parâmetros disponíveis para configuração.
-
