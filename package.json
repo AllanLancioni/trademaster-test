@@ -11,8 +11,7 @@
     "start": "node dist/server.js",
     "build": "npx tsc",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "test": "jest",
-    "heroku-postbuild": "ng build --prod" 
+    "test": "jest"
   },
   "repository": {
     "type": "git",
